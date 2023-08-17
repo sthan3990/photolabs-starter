@@ -2,7 +2,7 @@ import React from 'react';
 
 import PhotoListItem from './components/PhotoListItem';
 import './App.scss';
-import TopicList from 'components/TopicList';
+
 const sampleDataForPhotoListItem = {
   id: "1",
   location: {
@@ -20,11 +20,10 @@ const App = () => {
   
   return (
     <div className="App">
-      <PhotoListItem 
-         PhotoListData = {sampleDataForPhotoListItem}
-      />
-      <TopicList />
-
+      
+        <PhotoListItem 
+          PhotoListData = {sampleDataForPhotoListItem}
+        />  
     </div>
   );
 };
