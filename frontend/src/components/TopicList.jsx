@@ -22,10 +22,12 @@ const sampleDataForTopicList = [
 ];
 
 const TopicList = () => {
+
   return (
     <div className="top-nav-bar__topic-list">
-      {/* Insert React */}
-      <TopicListItem TopicListData = {sampleDataForTopicList} />
+      <TopicListItem 
+        TopicData = {sampleDataForTopicList} 
+        onClick = { } />
     </div>
   );
 };
