@@ -7,10 +7,13 @@ import topics from "mocks/topics";
 const TopicList = () => {
 
   return (
-    <div >
+    <div className="top-nav-bar__topic-list">
+      {topics.map(topic =>
       <TopicListItem
-        TopicData={topics}
+        Key={topic.id}
+        TopicData={topic}
       />
+      )}
     </div>
   );
 };
