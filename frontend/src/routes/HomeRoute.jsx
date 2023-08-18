@@ -16,7 +16,6 @@ const HomeRoute = () => {
         alert={alert}
       />
       <PhotoList
-      selected={selected}
         alert={alert}
         setSelected={setSelected}
         setAlert={setAlert}
