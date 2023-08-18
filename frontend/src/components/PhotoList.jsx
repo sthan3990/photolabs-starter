@@ -1,6 +1,8 @@
 import React from "react";
 
 import "../styles/PhotoList.scss";
+import photos from "mocks/photos";
+import PhotoListItem from "./PhotoListItem";
 
 const sampleDataForPhotoList = [
   {
@@ -59,7 +61,9 @@ const sampleDataForPhotoList = [
 const PhotoList = () => {
   return (
     <ul className="photo-list">
-     
+      <PhotoListItem
+        PhotoData={sampleDataForPhotoList} />
+        
     </ul>
   );
 };

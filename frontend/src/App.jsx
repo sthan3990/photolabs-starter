@@ -1,8 +1,8 @@
 import React from 'react';
 
-import PhotoListItem from './components/PhotoListItem';
 import './App.scss';
-import photos from 'mocks/photos';
+import PhotoList from './components/PhotoList';
+
 // const sampleDataForPhotoListItem = {
 //   id: "1",
 //   location: {
@@ -19,9 +19,7 @@ const App = () => {
 
   return (
     <div className="App">
-        <PhotoListItem 
-          PhotoListData = {photos}
-        />  
+      <PhotoList/>
     </div>
   );
 };
