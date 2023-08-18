@@ -12,6 +12,8 @@ const PhotoListItem = (props) => {
     <div className="photo-list__item" key={photo.id}>
 
       <PhotoFavButton
+        selected={props.selected}
+        setSelected={props.setSelected}
         alert={props.alert}
         setAlert={props.setAlert}
       />

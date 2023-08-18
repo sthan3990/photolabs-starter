@@ -7,15 +7,18 @@ import '../styles/HomeRoute.scss';
 
 const HomeRoute = () => {
   const [alert, setAlert] = useState(false);
+  const [selected, setSelected] = useState(false);
 
   return (
     <div className="home-route">
       <TopNavigation
+        selected={selected}
         alert={alert}
-        setAlert={setAlert}
       />
       <PhotoList
+      selected={selected}
         alert={alert}
+        setSelected={setSelected}
         setAlert={setAlert}
       />
     </div>

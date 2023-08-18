@@ -10,6 +10,7 @@ function PhotoFavButton(props) {
   const handleSelect = () => {
     props.setAlert(props.alert === false ? true : false);
     setSelected(selected === false ? true : false)
+    props.setSelected(selected === false ? true : false)
   };
 
   return (
@@ -17,7 +18,6 @@ function PhotoFavButton(props) {
       <div className="photo-list__fav-icon-svg">
         <FavIcon
           selected={selected}
-          displayAlert={props.alert}
           onClick={handleSelect}
         />
       </div>
