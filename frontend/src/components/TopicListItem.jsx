@@ -6,16 +6,15 @@ const TopicListItem = (props) => {
   const topics = props.TopicData;
 
   const topicItem = topics.map(topic =>
+
     <li key={topic.id}>
-      <div className="topic-list__item">
         <span>{topic.title}</span>
-      </div>
-    </li>
+     </li>
 
   );
 
   return (
-    <ul>
+    <ul className="topic-list__item">
       {topicItem}
     </ul>
   );
