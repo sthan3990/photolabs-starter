@@ -2,16 +2,22 @@ import React from "react";
 
 import "../styles/TopicListItem.scss";
 
-
 const TopicListItem = (props) => {
-  const itemData = props.TopicListData;
-  console.log(itemData);
+  const topics = props.TopicData;
+
+  const topicItem = topics.map(topic =>
+    <li key={topic.id}>
+      <div className="topic-list__item">
+        <span>{topic.title}</span>
+      </div>
+    </li>
+
+  );
+
   return (
-    <div className="topic-list__item">
-      {/* Insert React */}
-      {itemData.id}
-      {itemData.slug}
-    </div>
+    <ul>
+      {topicItem}
+    </ul>
   );
 };
 
