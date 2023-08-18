@@ -4,12 +4,11 @@ import '../styles/TopNavigationBar.scss'
 import FavBadge from './FavBadge';
 import TopicList from 'components/TopicList';
 
-const TopNavigation = () => {
-
-  const [alert, setAlert] = useState(false);
+const TopNavigation = (props) => {
 
   const handleSelect = () => {
-    setAlert(alert === false ? true : false);
+    console.log(props.alert);
+    props.setAlert(props.alert === false ? true : false);
   };
 
   return (
@@ -17,7 +16,7 @@ const TopNavigation = () => {
       <span className="top-nav-bar__logo">PhotoLabs</span>
       <TopicList />
       <FavBadge
-        isFavPhotoExist={alert}
+        isFavPhotoExist={props.alert}
         onClick={handleSelect}
       />
     </div>

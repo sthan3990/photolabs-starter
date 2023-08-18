@@ -10,8 +10,11 @@ const PhotoListItem = (props) => {
   return (
 
     <div className="photo-list__item" key={photo.id}>
-     
-      <PhotoFavButton />
+
+      <PhotoFavButton
+        alert={props.alert}
+        setAlert={props.setAlert}
+      />
 
       <img
         className="photo-list__image"
