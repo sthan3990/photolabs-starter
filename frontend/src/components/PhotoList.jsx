@@ -11,9 +11,9 @@ const PhotoList = () => {
     <div className="photo-list">
 
       {photos.map(photo =>
-
+      
         <PhotoListItem
-          Key={photo.id}
+          key={photo.id}
           PhotoData={photo}
         />
 

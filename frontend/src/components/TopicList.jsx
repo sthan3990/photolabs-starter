@@ -10,7 +10,7 @@ const TopicList = () => {
     <div className="top-nav-bar__topic-list">
       {topics.map(topic =>
       <TopicListItem
-        Key={topic.id}
+        key={topic.id}
         TopicData={topic}
       />
       )}
