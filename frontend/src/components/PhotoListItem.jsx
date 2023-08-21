@@ -7,9 +7,13 @@ const PhotoListItem = (props) => {
 
   const photo = props.PhotoData;
 
+  const handeClick = () => {
+    props.onClick(true);
+    props.setPhotoData(photo);
+  }
   return (
 
-    <div className="photo-list__item" key={photo.id}>
+    <div className="photo-list__item" key={photo.id} onClick={handeClick}>
 
       <PhotoFavButton
         selected={props.selected}

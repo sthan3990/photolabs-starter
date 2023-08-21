@@ -1,22 +1,25 @@
 import React from "react";
 import photos from "mocks/photos";
 import PhotoListItem from "./PhotoListItem";
-import PhotoFavButton from "./PhotoFavButton";
 import "../styles/PhotoList.scss";
 
 const PhotoList = (props) => {
 
+
   return (
     <div className="photo-list">
-
-      {photos.map(photo =>
+{/* 
+      only show 3 */}
+      {photos.slice(0,3).map(photo =>
 
         <PhotoListItem
+          setPhotoData={props.setPhotoData}
           setSelected={props.setSelected}
           alert={props.alert}
           setAlert={props.setAlert}
           key={photo.id}
           PhotoData={photo}
+          onClick={() => props.setShowModal(true)}
         />
 
       )}

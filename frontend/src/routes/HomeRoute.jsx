@@ -5,7 +5,7 @@ import TopNavigation from 'components/TopNavigationBar';
 import '../styles/HomeRoute.scss';
 
 
-const HomeRoute = () => {
+const HomeRoute = (props) => {
   const [alert, setAlert] = useState(false);
   const [selected, setSelected] = useState(false);
 
@@ -14,8 +14,13 @@ const HomeRoute = () => {
       <TopNavigation
         selected={selected}
         alert={alert}
+        setSelected={setSelected}
+        setAlert={setAlert}
       />
       <PhotoList
+        setShowModal={props.setShowModal}
+        setPhotoData={props.setPhotoData}
+        selected={selected}
         alert={alert}
         setSelected={setSelected}
         setAlert={setAlert}
