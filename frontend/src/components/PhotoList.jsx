@@ -5,12 +5,11 @@ import "../styles/PhotoList.scss";
 
 const PhotoList = (props) => {
 
-
   return (
     <div className="photo-list">
-{/* 
+      {/* 
       only show 3 */}
-      {photos.slice(0,3).map(photo =>
+      {photos.map(photo =>
 
         <PhotoListItem
           setPhotoData={props.setPhotoData}
