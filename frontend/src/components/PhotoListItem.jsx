@@ -11,11 +11,11 @@ const PhotoListItem = (props) => {
     props.setPhotoData(photo);
   }
 
-  if (props.setPhotoData) {
     return (
       <div className="photo-list__item" key={photo.id}>
 
         <PhotoFavButton
+          photoId = {photo.id + 3}
           selected={props.selected}
           setSelected={props.setSelected}
           alert={props.alert}
@@ -45,15 +45,6 @@ const PhotoListItem = (props) => {
       </div>
 
     );
-  }
-  else {
-    return (
-      <img
-      className="photo-list__image"
-      src={photo.urls.full}
-      />
-    )
-  }
 };
 
 export default PhotoListItem;

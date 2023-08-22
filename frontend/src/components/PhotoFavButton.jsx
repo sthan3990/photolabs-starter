@@ -5,19 +5,24 @@ import '../styles/PhotoFavButton.scss';
 
 function PhotoFavButton(props) {
 
-  const [selected, setSelected] = useState(false);
+  const { setSelected, selected, photoId } = props;
+  const isSelected = selected.includes(photoId);
 
   const handleSelect = () => {
-    props.setAlert(props.alert === false ? true : false);
-    setSelected(selected === false ? true : false)
-    props.setSelected(selected === false ? true : false)
-  };
 
+    if (isSelected) {
+      // If the clicked favicon is already selected, remove it
+      setSelected(prevSelected => prevSelected.filter(id => id !== photoId));
+    } else {
+      setSelected(prevSelected => [...prevSelected, photoId]);
+    }
+  };
+  
   return (
     <div className="photo-list__fav-icon">
       <div className="photo-list__fav-icon-svg">
         <FavIcon
-          selected={selected}
+          selected={isSelected}
           onClick={handleSelect}
         />
       </div>

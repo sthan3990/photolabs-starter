@@ -7,7 +7,7 @@ import '../styles/HomeRoute.scss';
 
 const HomeRoute = (props) => {
   const [alert, setAlert] = useState(false);
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState([]);
 
   return (
     <div className="home-route">
@@ -18,12 +18,12 @@ const HomeRoute = (props) => {
         setAlert={setAlert}
       />
       <PhotoList
-        setShowModal={props.setShowModal}
-        setPhotoData={props.setPhotoData}
+        setAlert={setAlert}
+        setSelected={setSelected}
         selected={selected}
         alert={alert}
-        setSelected={setSelected}
-        setAlert={setAlert}
+        setShowModal={props.setShowModal}
+        setPhotoData={props.setPhotoData}
       />
     </div>
   );

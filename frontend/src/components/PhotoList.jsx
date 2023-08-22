@@ -4,15 +4,16 @@ import PhotoListItem from "./PhotoListItem";
 import "../styles/PhotoList.scss";
 
 const PhotoList = (props) => {
+  
 
   return (
     <div className="photo-list">
-      {/* 
-      only show 3 */}
+
       {photos.map(photo =>
 
         <PhotoListItem
           setPhotoData={props.setPhotoData}
+          selected={props.selected}
           setSelected={props.setSelected}
           alert={props.alert}
           setAlert={props.setAlert}

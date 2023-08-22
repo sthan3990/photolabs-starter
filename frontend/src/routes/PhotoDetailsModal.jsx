@@ -4,18 +4,16 @@ import closeSymbol from '../assets/closeSymbol.svg';
 import PhotoList from 'components/PhotoList';
 import '../styles/PhotoDetailsModal.scss'
 
-
 const PhotoDetailsModal = (props) => {
 
   const photoData = props.photoData;
-
+  
   const handeClick = () => {
     props.toggleModal(false);
   }
 
   return (
     <div className="photo-details-modal">
-
 
       <button
         className="photo-details-modal__close-button"
@@ -38,7 +36,13 @@ const PhotoDetailsModal = (props) => {
       </div>
       <div className="photo-details-modal__images">
 
-        <PhotoList />
+        <PhotoList
+          photoId={photoData.photoId}
+          setAlert={props.setAlert}
+          setSelected={props.setSelected}
+          selected={props.selected}
+          alert={props.alert}
+        />
 
       </div>
 
