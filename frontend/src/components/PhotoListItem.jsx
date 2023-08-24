@@ -13,9 +13,9 @@ const PhotoListItem = (props) => {
 
     return (
       <div className="photo-list__item" key={photo.id}>
-
+        
         <PhotoFavButton
-          photoId = {photo.id + 3}
+          photoId = {photo.id + 1}
           selected={props.selected}
           setSelected={props.setSelected}
           alert={props.alert}

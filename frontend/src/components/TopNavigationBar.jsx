@@ -7,23 +7,25 @@ import TopicList from 'components/TopicList';
 const TopNavigation = (props) => {
 
   const { selected } = props;
+
+  console.log(selected); 
   const isFavPhotoExist = selected.length > 0;
-  
+
   return (
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span>
       <TopicList />
       {
-      selected.length === 0 ? 
-      <FavBadge
-      selected={!selected}
-        isFavPhotoExist={isFavPhotoExist}
-      /> :
-      <FavBadge
-        selected={selected}
-        isFavPhotoExist={!!isFavPhotoExist}
-      /> 
-    }
+        selected.length === 0 ?
+          <FavBadge
+            selected={!selected}
+            isFavPhotoExist={isFavPhotoExist}
+          /> :
+          <FavBadge
+            selected={selected}
+            isFavPhotoExist={!!isFavPhotoExist}
+          />
+      }
     </div>
   )
 }

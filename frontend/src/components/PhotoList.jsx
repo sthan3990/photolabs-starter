@@ -15,6 +15,7 @@ const PhotoList = (props) => {
           setPhotoData={props.setPhotoData}
           selected={props.selected}
           setSelected={props.setSelected}
+          setShowModal={props.setShowModal}
           alert={props.alert}
           setAlert={props.setAlert}
           key={photo.id}
