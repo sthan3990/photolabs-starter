@@ -9,7 +9,6 @@ function PhotoFavButton(props) {
 
   const isSelected = selected.includes(photoId);
 
-
   const handleSelect = () => {
 
     if (isSelected) {

@@ -8,6 +8,7 @@
   height: 80%;
   width: 55%;
   overflow-y: scroll;
+  border-radius: 12px;
 }
 
 .photo-details-modal__close-button {
@@ -26,14 +27,13 @@
 .photo-details-modal__images {
   margin-left: 36px;
   margin-top: 8px;
-
 }
 
 .photo-details-modal__image {
-  max-width: 95%;
+  max-width: 30%; 
+  max-height: 60vh;  
   border-radius: 8px;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto;  
 }
 
 .photo-details-modal__top-bar {

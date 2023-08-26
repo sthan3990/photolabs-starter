@@ -16,6 +16,7 @@ const HomeRoute = (props) => {
         setAlert={props.setAlert}
       />
       <PhotoList
+        photoData={props.photoData}
         setSelected={props.setSelected}
         selected={props.selected}
         alert={props.alert}

@@ -8,7 +8,6 @@ const TopNavigation = (props) => {
 
   const { selected } = props;
 
-  console.log(selected); 
   const isFavPhotoExist = selected.length > 0;
 
   return (

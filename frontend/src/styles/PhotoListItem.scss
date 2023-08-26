@@ -2,11 +2,10 @@
   margin: 24px;
   padding: 8px;
   border-width: 0.5px;
-  border-color: rgb(240, 16, 16);
+  border-color: lightgray;
   border-style: solid;
   border-radius: 8px;
   max-width: fit-content;
-  background-color: #F5F5F5;
 }
 
 .photo-list__image {
@@ -45,5 +44,5 @@
 }
 
 .photo-list__user-location {
-  color: #F5F5F5;
+  color: #838383;
 }

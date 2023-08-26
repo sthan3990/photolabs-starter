@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import HomeRoute from 'routes/HomeRoute';
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
-
 import './App.scss';
 
 // Note: Rendering a single component to build components in isolation
@@ -11,20 +10,26 @@ const App = (props) => {
   const [photoData, setPhotoData] = useState(null);
   const [selected, setSelected] = useState([]);
   const [alert, setAlert] = useState(false);
-
+ 
   return (
     <div className="App">
       <HomeRoute
         alert={alert}
         setAlert={setAlert}
-        setShowModal={setShowModal}
+        photoData={photoData}
         setPhotoData={setPhotoData}
-        setSelected={setSelected}
         selected={selected}
+        setSelected={setSelected}
+        setShowModal={setShowModal}
       />
       {
-        showModal ? <PhotoDetailsModal setSelected={setSelected}
-          selected={selected} photoData={photoData} toggleModal={setShowModal} /> : null
+        showModal ?
+          <PhotoDetailsModal
+            selected={selected}
+            setSelected={setSelected}
+            photoData={photoData}
+            setPhotoData={setPhotoData}
+            toggleModal={setShowModal} /> : null
       }
     </div>
   );
