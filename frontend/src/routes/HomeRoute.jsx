@@ -6,21 +6,20 @@ import '../styles/HomeRoute.scss';
 
 
 const HomeRoute = (props) => {
-  const [alert, setAlert] = useState(false);
 
   return (
     <div className="home-route">
       <TopNavigation
         selected={props.selected}
         setSelected={props.setSelected}
-        alert={alert}
-        setAlert={setAlert}
+        alert={props.alert}
+        setAlert={props.setAlert}
       />
       <PhotoList
-        setAlert={setAlert}
         setSelected={props.setSelected}
         selected={props.selected}
-        alert={alert}
+        alert={props.alert}
+        setAlert={props.setAlert}
         setShowModal={props.setShowModal}
         setPhotoData={props.setPhotoData}
       />
