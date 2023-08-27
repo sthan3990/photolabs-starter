@@ -18,7 +18,6 @@ const HomeRoute = (props) => {
   return (
     <div>
       <TopNavigation
-        photos={photos}
         topics={topics}
         newTopic={newTopic}
         favedPhotos={favedPhotos}

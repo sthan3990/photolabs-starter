@@ -28,16 +28,18 @@ const PhotoListItem = (props) => {
           className="photo-list__user-profile" 
           src={user.profile}>
           </img>
-        <div>
+     
           <div>
             {user.name}
           </div>
+
           <div className={"photo-list__user-location"}>
             {location.city}, {location.country}
           </div>
+          
         </div>
       </div>
-    </div>
+   
   );
 };
 

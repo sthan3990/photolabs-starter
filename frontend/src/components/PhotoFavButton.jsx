@@ -6,12 +6,14 @@ import React from 'react';
 
 
 const PhotoFavButton = (props) => {
-  
+
+  const {likeToggler, favedPhotos} = props;
+
   const toggler = () => {
-    props.likeToggler(props.photo);
+    likeToggler(props.photo);
   };
 
-  const isLiked = props.favedPhotos.find(photo => photo.id === props.photo.id);
+  const isLiked = favedPhotos.find(photo => photo.id === props.photo.id);
 
   return (
     <div className="photo-list__fav-icon" onClick={toggler}>

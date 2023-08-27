@@ -20,6 +20,8 @@ const ACTIONS = {
   SET_TOPIC_DATA: 'SET_TOPIC_DATA',
 }
 
+const dataURL = "http://localhost:8001";
+
 const reducer = (state, action) => {
 
   const addFave = (photo) => {
@@ -102,8 +104,8 @@ export default function useApplicationData() {
   useEffect(() => {
     const fetchData = async () => {
       const [photosResponse, topicsResponse] = await Promise.all([
-        axios.get("http://localhost:8001/api/photos"),
-        axios.get("http://localhost:8001/api/topics")
+        axios.get(`${dataURL}/api/photos`),
+        axios.get(`${dataURL}/api/topics`)
       ]);
 
       dispatch({ type: 'SET_PHOTO_DATA', payload: photosResponse.data });
@@ -118,7 +120,7 @@ export default function useApplicationData() {
   useEffect(() => {
     if (state.currentTopic !== null) {
       const fetchTopicPhotos = async () => {
-        const topicPhotosResponse = await axios.get(`http://localhost:8001/api/photos/${state.currentTopic.id}`);
+        const topicPhotosResponse = await axios.get(`${dataURL}/api/photos/${state.currentTopic.id}`);
         dispatch({ type: "SET_PHOTO_DATA", payload: topicPhotosResponse.data });
       };
 
