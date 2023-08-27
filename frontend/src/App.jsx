@@ -1,35 +1,50 @@
-import React, { useState } from 'react';
-import HomeRoute from 'routes/HomeRoute';
-import PhotoDetailsModal from 'routes/PhotoDetailsModal';
+import React from 'react';
+
+// Hooks and Helpers
+import useApplicationData from 'hooks/useApplicationData';
+// components
+import HomeRoute from './routes/HomeRoute';
+import PhotoDetailsModal from './routes/PhotoDetailsModal';
+
 import './App.scss';
 
-// Note: Rendering a single component to build components in isolation
-const App = (props) => {
+const App = () => {
 
-  const [showModal, setShowModal] = useState(false);
-  const [photoData, setPhotoData] = useState(null);
-  const [selected, setSelected] = useState([]);
-  const [alert, setAlert] = useState(false);
- 
+  //import hooks
+  const { state,
+    modalToggler,
+    favToggler,
+    onCloseModal,
+    newTopic } = useApplicationData();
+
+  // import states
+  const { photos,
+    topics,
+    favedPhotos,
+    modalActive,
+    modalPhoto,
+    currentTopic } = state;
+
   return (
     <div className="App">
-      <HomeRoute
-        alert={alert}
-        setAlert={setAlert}
-        photoData={photoData}
-        setPhotoData={setPhotoData}
-        selected={selected}
-        setSelected={setSelected}
-        setShowModal={setShowModal}
+      < HomeRoute
+        photos={photos}
+        topics={topics}
+        currentTopic={currentTopic}
+        newTopic={newTopic}
+        modalToggler={modalToggler}
+        likeToggler={favToggler}
+        favedPhotos={favedPhotos}
+        favToggler={favToggler}
       />
-      {
-        showModal ?
-          <PhotoDetailsModal
-            selected={selected}
-            setSelected={setSelected}
-            photoData={photoData}
-            setPhotoData={setPhotoData}
-            toggleModal={setShowModal} /> : null
+      {modalActive &&
+        <PhotoDetailsModal
+          photo={modalPhoto}
+          modalToggler={modalToggler}
+          onCloseModal={onCloseModal}
+          likeToggler={favToggler}
+          favedPhotos={favedPhotos}
+        />
       }
     </div>
   );

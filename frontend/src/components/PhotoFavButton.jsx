@@ -1,34 +1,30 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 
-import FavIcon from './FavIcon';
+////////////// Styling /////////////////
 import '../styles/PhotoFavButton.scss';
 
-function PhotoFavButton(props) {
+///////////// Components ///////////////
+import FavIcon from '../components/FavIcon';
 
-  const { setSelected, selected, photoId } = props;
 
-  const isSelected = selected.includes(photoId);
-
-  const handleSelect = () => {
-
-    if (isSelected) {
-      // If the clicked favicon is already selected, remove it
-      setSelected(prevSelected => prevSelected.filter(id => id !== photoId));
-    } else {
-      setSelected(prevSelected => [...prevSelected, photoId]);
-    }
+const PhotoFavButton = (props) => {
+  
+  const toggler = () => {
+    props.likeToggler(props.photo);
   };
 
+  const isLiked = props.favedPhotos.find(photo => photo.id === props.photo.id);
+
   return (
-    <div className="photo-list__fav-icon">
+    <div className="photo-list__fav-icon" onClick={toggler}>
       <div className="photo-list__fav-icon-svg">
         <FavIcon
-          selected={isSelected}
-          onClick={handleSelect}
+          isLiked={isLiked}
         />
       </div>
     </div>
   );
-}
+
+};
 
 export default PhotoFavButton;

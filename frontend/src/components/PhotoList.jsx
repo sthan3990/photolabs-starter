@@ -1,31 +1,21 @@
-import React from "react";
-import photos from "mocks/photos";
-import PhotoListItem from "./PhotoListItem";
-import "../styles/PhotoList.scss";
+import React from 'react';
+
+import '../styles/PhotoList.scss';
+import PhotoListItem from './PhotoListItem';
 
 const PhotoList = (props) => {
-  
-
   return (
-    <div className="photo-list">
-
-      {photos.map(photo =>
-
+    <ul className="photo-list">
+      {props.photos.map((photo, index) =>
         <PhotoListItem
-          setPhotoData={props.setPhotoData}
-          selected={props.selected}
-          setSelected={props.setSelected}
-          setShowModal={props.setShowModal}
-          alert={props.alert}
-          setAlert={props.setAlert}
-          key={photo.id}
-          PhotoData={photo}
-          onClick={() => props.setShowModal(true)}
+          key={index}
+          photo={photo}
+          favedPhotos={props.favedPhotos}
+          likeToggler={props.likeToggler}
+          modalToggler={props.modalToggler}
         />
-
       )}
-
-    </div>
+    </ul>
   );
 };
 
