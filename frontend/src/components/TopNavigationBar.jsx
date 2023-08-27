@@ -6,24 +6,27 @@ import '../styles/TopNavigationBar.scss';
 
 const TopNavigation = (props) => {
 
+  const {topics, newTopic, favedPhotos} = props;
+
   const topicResetHandler = () => {
-    props.newTopic(null);
+    newTopic(null);
   };
 
   return (
     <div className="top-nav-bar">
       <span
         className="top-nav-bar__logo"
-        onClick={topicResetHandler}
-      >PhotoLabs</span>
+        onClick={topicResetHandler}>PhotoLabs</span>
+
       <span className="top-nav-topics">
-        < TopicList
-          topics={props.topics}
-          newTopic={props.newTopic}
+        <TopicList
+          topics={topics}
+          newTopic={newTopic}
         />
-        < FavBadge
-          favedPhotos={props.favedPhotos}
+        <FavBadge
+          favedPhotos={favedPhotos}
         />
+
       </span>
     </div>
   );

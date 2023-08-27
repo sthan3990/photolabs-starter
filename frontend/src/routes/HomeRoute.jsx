@@ -5,18 +5,29 @@ import TopNavigation from '../components/TopNavigationBar';
 import '../styles/HomeRoute.scss';
 
 const HomeRoute = (props) => {
+
+  const {
+    photos,
+    topics,
+    newTopic, 
+    favedPhotos,
+    likeToggler,
+    modalToggler 
+  } = props;
+
   return (
     <div>
-      < TopNavigation
-        topics={props.topics}
-        newTopic={props.newTopic}
-        favedPhotos={props.favedPhotos}
+      <TopNavigation
+        photos={photos}
+        topics={topics}
+        newTopic={newTopic}
+        favedPhotos={favedPhotos}
       />
-      < PhotoList
-        photos={props.photos}
-        favedPhotos={props.favedPhotos}
-        likeToggler={props.likeToggler}
-        modalToggler={props.modalToggler}
+      <PhotoList
+        photos={photos}
+        favedPhotos={favedPhotos}
+        likeToggler={likeToggler}
+        modalToggler={modalToggler}
       />
     </div>
   );

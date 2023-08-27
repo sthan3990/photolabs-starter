@@ -2,10 +2,9 @@ import React from 'react';
 import PhotoFavButton from '../components/PhotoFavButton';
 import '../styles/PhotoListItem.scss';
 
-const PhotoListItem = ({ photo, favedPhotos, modalToggler, likeToggler }) => {
-
+const PhotoListItem = (props) => {
+  const { photo, favedPhotos, modalToggler, likeToggler } = props;
   const { urls, user, location } = photo;
-
 
   const modalToggleHandler = () => {
     modalToggler(photo);
@@ -21,20 +20,20 @@ const PhotoListItem = ({ photo, favedPhotos, modalToggler, likeToggler }) => {
       <img 
         onClick={modalToggleHandler} 
         className="photo-list__image" 
-        src={photo.urls.regular}>
+        src={urls.regular}>
       </img>
 
       <div className="photo-list__user-info">
         <img 
           className="photo-list__user-profile" 
-          src={photo.user.profile}>
+          src={user.profile}>
           </img>
         <div>
           <div>
-            {photo.user.name}
+            {user.name}
           </div>
           <div className={"photo-list__user-location"}>
-            {photo.location.city}, {photo.location.country}
+            {location.city}, {location.country}
           </div>
         </div>
       </div>

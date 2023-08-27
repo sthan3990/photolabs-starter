@@ -1,10 +1,8 @@
 import React from 'react';
 
-////////////// Styling /////////////////
-import '../styles/PhotoFavButton.scss';
+ import '../styles/PhotoFavButton.scss';
 
-///////////// Components ///////////////
-import FavIcon from '../components/FavIcon';
+ import FavIcon from '../components/FavIcon';
 
 
 const PhotoFavButton = (props) => {

@@ -27,7 +27,7 @@ const App = () => {
 
   return (
     <div className="App">
-      < HomeRoute
+      <HomeRoute
         photos={photos}
         topics={topics}
         currentTopic={currentTopic}
