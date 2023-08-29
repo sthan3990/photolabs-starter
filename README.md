@@ -12,6 +12,7 @@ Install dependencies with `npm install` in each respective `/frontend` and `/bac
 * Axios 
 * Express
 
+## Demo
 ![demo](images/frontend.gif)
 
 ## [Frontend] Running Webpack Development Server
