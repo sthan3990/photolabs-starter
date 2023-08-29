@@ -7,6 +7,13 @@ The PhotoLabs project for the Web Development React course programming.
 
 Install dependencies with `npm install` in each respective `/frontend` and `/backend`.
 
+## Dependencies
+* React
+* Axios 
+* Express
+
+![demo](images/frontend.gif)
+
 ## [Frontend] Running Webpack Development Server
 
 ```sh

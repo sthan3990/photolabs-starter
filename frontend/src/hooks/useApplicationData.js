@@ -118,7 +118,7 @@ export default function useApplicationData() {
   useEffect(() => {
     if (state.currentTopic !== null) {
       const fetchTopicPhotos = async () => {
-        const topicPhotosResponse = await axios.get(`${dataURL}/api/topics/photos/${state.currentTopic.id}`);
+        const topicPhotosResponse = await axios.get(`/api/topics/photos/${state.currentTopic.id}`);
         dispatch({ type: "SET_PHOTO_DATA", payload: topicPhotosResponse.data });
       };
 
