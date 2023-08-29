@@ -1,5 +1,5 @@
 # react-photolabs
-The PhotoLabs project for the Web Development React course programming.
+The PhotoLabs project for the Lighthouse Web Development Flex Program. Focus full stack REACT prgraomming.
 
 # Photolabs
 
@@ -8,11 +8,13 @@ The PhotoLabs project for the Web Development React course programming.
 Install dependencies with `npm install` in each respective `/frontend` and `/backend`.
 
 ## Dependencies
+
 * React
 * Axios 
 * Express
 
 ## Demo
+
 ![demo](images/frontend.gif)
 
 ## [Frontend] Running Webpack Development Server
